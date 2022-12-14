@@ -14,11 +14,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $pageTitle = "Benvenuto nella home";
-    return view('home', compact("pageTitle"));
-});
+    $data = [
+        "pageTitle" => "The Logo",
+        "info" => "First",
+        "links" => [
+            [
+                "name" => "Home",
+                "coll" => "home"
+            ],
+            [
+                "name" => "About",
+                "coll" => "about"
+            ],
+
+        ]
+    ];
+    return view('home', $data);
+})->name("home");
 
 Route::get('/about', function () {
-    $pageAbout = "Pagina About ora";
-    return view('about', compact("pageAbout"));
+    $data = [
+        "pageTitle" => "The Logo",
+        "info" => "First",
+        "links" => [
+            [
+                "name" => "Home",
+                "coll" => "home"
+            ],
+            [
+                "name" => "About",
+                "coll" => "about"
+            ],
+
+        ]
+    ];
+    return view('about', $data);
 })->name("about");
